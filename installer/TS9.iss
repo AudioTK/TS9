@@ -1,15 +1,15 @@
 [Setup]
-AppName=ATKTS9
+AppName=TS9
 AppVersion=1.0
 
 
-DefaultDirName={pf}\ATKTS9
-DefaultGroupName=ATKTS9
+DefaultDirName={pf}\TS9
+DefaultGroupName=TS9
 Compression=lzma2
 SolidCompression=yes
 OutputDir=.\
 ArchitecturesInstallIn64BitMode=x64
-OutputBaseFilename=ATKTS9 Installer
+OutputBaseFilename=TS9 Installer
 LicenseFile=license.rtf
 SetupLogging=yes
 
@@ -23,20 +23,20 @@ Name: "vst3_64"; Description: "64-bit VST3 Plugin (.vst3)"; Types: full custom; 
 Name: "manual"; Description: "User guide"; Types: full custom; Flags: fixed
 
 [Files]
-Source: "..\Builds\VisualStudio2019_32\Win32\Release\VST3\ATKTS9.vst3"; DestDir: "{cf}\VST3\"; Check: not Is64BitInstallMode; Components:vst3_32; Flags: ignoreversion;
-Source: "..\Builds\VisualStudio2019_32\Win32\Release\VST3\ATKTS9.vst3"; DestDir: "{cf32}\VST3\"; Check: Is64BitInstallMode; Components:vst3_32; Flags: ignoreversion;
-Source: "..\Builds\VisualStudio2019\x64\Release\VST3\ATKTS9 x64.vst3"; DestDir: "{cf64}\VST3\"; Check: Is64BitInstallMode; Components:vst3_64; Flags: ignoreversion;
+Source: "..\Builds\VisualStudio2019_32\Win32\Release\VST3\TS9.vst3"; DestDir: "{cf}\VST3\"; Check: not Is64BitInstallMode; Components:vst3_32; Flags: ignoreversion;
+Source: "..\Builds\VisualStudio2019_32\Win32\Release\VST3\TS9.vst3"; DestDir: "{cf32}\VST3\"; Check: Is64BitInstallMode; Components:vst3_32; Flags: ignoreversion;
+Source: "..\Builds\VisualStudio2019\x64\Release\VST3\TS9 x64.vst3"; DestDir: "{cf64}\VST3\"; Check: Is64BitInstallMode; Components:vst3_64; Flags: ignoreversion;
 
 Source: "..\manual\TS9_manual.pdf"; DestDir: "{app}"
 Source: "changelog.txt"; DestDir: "{app}"
 Source: "readmewin.rtf"; DestDir: "{app}"; DestName: "readme.rtf"; Flags: isreadme
 
 [Icons]
-Name: "{group}\ATKTS9"; Filename: "{app}\ATKTS9.exe"
+Name: "{group}\TS9"; Filename: "{app}\TS9.exe"
 ;Name: "{group}\User guide"; Filename: "{app}\TS9_manual.pdf"
 Name: "{group}\Changelog"; Filename: "{app}\changelog.txt"
 ;Name: "{group}\readme"; Filename: "{app}\readme.rtf"
-Name: "{group}\Uninstall ATKTS9"; Filename: "{app}\unins000.exe"
+Name: "{group}\Uninstall TS9"; Filename: "{app}\unins000.exe"
 
 ;[Dirs] 
 ;Name: {cf}\Digidesign\DAE\Plugins\

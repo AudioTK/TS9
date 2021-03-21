@@ -88,7 +88,7 @@
 															<key>GID</key>
 															<integer>0</integer>
 															<key>PATH</key>
-															<string>/Users/matthieu/Library/Audio/Plug-Ins/VST3/ATKTS9.vst3</string>
+															<string>/Users/matthieu/Library/Audio/Plug-Ins/VST3/TS9.vst3</string>
 															<key>PATH_TYPE</key>
 															<integer>1</integer>
 															<key>PERMISSIONS</key>
@@ -614,7 +614,7 @@
 				<key>FOLLOW_SYMBOLIC_LINKS</key>
 				<false/>
 				<key>IDENTIFIER</key>
-				<string>com.MatthieuBrucher.vst3.pkg.ATKTS9</string>
+				<string>com.MatthieuBrucher.vst3.pkg.TS9</string>
 				<key>LOCATION</key>
 				<integer>0</integer>
 				<key>NAME</key>
@@ -721,7 +721,7 @@
 															<key>GID</key>
 															<integer>0</integer>
 															<key>PATH</key>
-															<string>../Builds/MacOSX/build/Release/ATKTS9.appex</string>
+															<string>../Builds/MacOSX/build/Release/TS9.appex</string>
 															<key>PATH_TYPE</key>
 															<integer>1</integer>
 															<key>PERMISSIONS</key>
@@ -1231,7 +1231,7 @@
 				<key>FOLLOW_SYMBOLIC_LINKS</key>
 				<false/>
 				<key>IDENTIFIER</key>
-				<string>com.MatthieuBrucher.auv3.pkg.ATKTS9</string>
+				<string>com.MatthieuBrucher.auv3.pkg.TS9</string>
 				<key>LOCATION</key>
 				<integer>0</integer>
 				<key>NAME</key>
@@ -1338,7 +1338,7 @@
 															<key>GID</key>
 															<integer>0</integer>
 															<key>PATH</key>
-															<string>../Builds/MacOSX/build/Release/ATKTS9.component</string>
+															<string>../Builds/MacOSX/build/Release/TS9.component</string>
 															<key>PATH_TYPE</key>
 															<integer>1</integer>
 															<key>PERMISSIONS</key>
@@ -1864,7 +1864,7 @@
 				<key>FOLLOW_SYMBOLIC_LINKS</key>
 				<false/>
 				<key>IDENTIFIER</key>
-				<string>com.MatthieuBrucher.au.pkg.ATKTS9</string>
+				<string>com.MatthieuBrucher.au.pkg.TS9</string>
 				<key>LOCATION</key>
 				<integer>0</integer>
 				<key>NAME</key>
@@ -2138,7 +2138,7 @@
 						<key>LANGUAGE</key>
 						<string>English</string>
 						<key>VALUE</key>
-						<string>ATKTS9</string>
+						<string>TS9</string>
 					</dict>
 				</array>
 			</dict>
@@ -2341,7 +2341,7 @@
 				</dict>
 			</array>
 			<key>NAME</key>
-			<string>ATKTS9 Installer</string>
+			<string>TS9 Installer</string>
 			<key>PAYLOAD_ONLY</key>
 			<false/>
 			<key>TREAT_MISSING_PRESENTATION_DOCUMENTS_AS_WARNING</key>
