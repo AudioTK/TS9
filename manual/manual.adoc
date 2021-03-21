@@ -1,0 +1,24 @@
+= TS9 3.0
+Matthieu Brucher <matthieu.brucher@gmail.com>
+:doctype: book
+:source-highlighter: coderay
+:listing-caption: Listing
+// Uncomment next line to set page size (default is Letter)
+//:pdf-page-size: A4
+
+*TS9* is a free Open Source plugin modeling the well-known Boss TS9.
+
+image::ATKTS9.png[GUI]
+
+== Usage
+
+Here is how the parameters interact with the plugin:
+
+[square]
+* *Gain* changes the amount of distortion you get from the preamplifier by increasing the input signal level,
+* *Low* handles the amount of low frequencies in the tone stack
+* *Middle* handles the amount of middle frequencies in the tone stack
+
+== Bugs
+
+There shouldn’t be bugs, but you never know. Please contact me or leave a message on http://www.audio-tk.com[Audio ToolKit web site] or on http://blog.audio-tk.com/tags/atkts9/[my blog, on the announcement page].

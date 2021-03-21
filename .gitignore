@@ -1,0 +1,8 @@
+Builds
+gyrator
+*.log
+*.exe
+*.dat
+*.png
+*.dmg
+ATKSD1 Installer.pkg

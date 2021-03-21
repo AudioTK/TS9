@@ -1,0 +1,6 @@
+TS9 changelog
+http://www.audio-tk.com
+
+22/03/21 - 1.0
+  - built against ATK 3.3.0
+  - rebuild against JUCE 6
