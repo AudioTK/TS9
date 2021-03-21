@@ -1,4 +1,4 @@
-= TS9 3.0
+= TS9 1.0
 Matthieu Brucher <matthieu.brucher@gmail.com>
 :doctype: book
 :source-highlighter: coderay
@@ -6,7 +6,7 @@ Matthieu Brucher <matthieu.brucher@gmail.com>
 // Uncomment next line to set page size (default is Letter)
 //:pdf-page-size: A4
 
-*TS9* is a free Open Source plugin modeling the well-known Boss TS9.
+*TS9* is a free Open Source plugin modeling the well-known Ibanez TS9 TubeScreamer.
 
 image::ATKTS9.png[GUI]
 
@@ -15,7 +15,7 @@ image::ATKTS9.png[GUI]
 Here is how the parameters interact with the plugin:
 
 [square]
-* *Gain* changes the amount of distortion you get from the preamplifier by increasing the input signal level,
+* *Gain* changes the amount of distortion you get from the plugin by increasing the input signal level,
 * *Low* handles the amount of low frequencies in the tone stack
 * *Middle* handles the amount of middle frequencies in the tone stack
 
