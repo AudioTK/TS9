@@ -37,8 +37,8 @@
   </MAINGROUP>
   <EXPORTFORMATS>
     <XCODE_MAC targetFolder="Builds/MacOSX" vst3Folder="../../SDKs/VST3_SDK"
-               extraDefs="HAS_STD_ALIGN&#10;" keepCustomXcodeSchemes="1" aaxFolder="../../SDKs/AAX_SDK_2p2p2"
-               xcodeValidArchs="arm64,arm64e,x86_64" hardenedRuntime="1">
+               keepCustomXcodeSchemes="1" aaxFolder="../../SDKs/AAX_SDK_2p2p2"
+               xcodeValidArchs="arm64,arm64e,x86_64" hardenedRuntime="1" extraCompilerFlags="-fno-aligned-allocation">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="TS9" headerPath="../../../../Plugins/TS9&#10;../../../../AudioTK&#10;../../../../AudioTK/3rdParty/gsl/include&#10;../../../../AudioTK/3rdParty/eigen&#10;../../../../../local/boost_1_75_0&#10;../../../../AudioTK-Modeling"
                        osxSDK="11.1 SDK" codeSigningIdentity="Developer ID Application: Matthieu Brucher (APLDS8QMQ5)"/>
