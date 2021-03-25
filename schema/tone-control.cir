@@ -1,0 +1,14 @@
+*
+Vin	Vin	0	AC	1V
+*
+R7	Vin	1	1K
+C5	1	0	0.22U
+R9	1	0	10k
+PTONE	1	2	3	22k
+
+ZIC	1	3	Vout
+C6	2	4	0.22u
+R8	4	0	220
+
+R11	3	Vout	1k
+*
