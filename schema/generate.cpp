@@ -33,7 +33,7 @@ int main(int argc, const char** argv)
   std::unique_ptr<ATK::ModellerFilter<double>> filter = createStaticFilter();
   for(gsl::index i = 0; i < filter->get_number_parameters(); ++i)
   {
-    filter->set_parameter(i, 0.001);
+    filter->set_parameter(i, 0.05);
   }
   filter->set_input_sampling_rate(SAMPLING_RATE);
   filter->set_output_sampling_rate(SAMPLING_RATE);

@@ -1,6 +1,3 @@
-#include <cstdlib>
-#include <memory>
-
 #include <ATK/Core/Utilities.h>
 #include <ATK/Modelling/ModellerFilter.h>
 #include <ATK/Modelling/StaticComponent/StaticCapacitor.h>
@@ -8,11 +5,15 @@
 #include <ATK/Modelling/StaticComponent/StaticCurrent.h>
 #include <ATK/Modelling/StaticComponent/StaticDiode.h>
 #include <ATK/Modelling/StaticComponent/StaticEbersMollTransistor.h>
+#include <ATK/Modelling/StaticComponent/StaticGummelPoonTransistor.h>
 #include <ATK/Modelling/StaticComponent/StaticMOSFETTransistor.h>
 #include <ATK/Modelling/StaticComponent/StaticResistor.h>
 #include <ATK/Modelling/StaticComponent/StaticResistorCapacitor.h>
 
 #include <Eigen/Eigen>
+
+#include <cstdlib>
+#include <memory>
 
 namespace
 {

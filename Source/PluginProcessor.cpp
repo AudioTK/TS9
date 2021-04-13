@@ -13,7 +13,8 @@
 
 namespace TS9
 {
-  std::unique_ptr<ATK::ModellerFilter<double>> createStaticFilter();
+std::unique_ptr<ATK::ModellerFilter<double>> createStaticFilter_dist();
+std::unique_ptr<ATK::ModellerFilter<double>> createStaticFilter_tone();
 } // namespace
 
 //==============================================================================
@@ -39,11 +40,12 @@ ATKTS9AudioProcessor::ATKTS9AudioProcessor()
             std::make_unique<juce::AudioParameterFloat>("tone", "Tone", NormalisableRange<float>(-100, 100), 0, " %"),
             std::make_unique<juce::AudioParameterFloat>("level", "Level", NormalisableRange<float>(0, 100), 100, " %")})
 {
-  toneFilter = TS9::createStaticFilter();
+  toneFilter = TS9::createStaticFilter_tone();
+  driveFilter = TS9::createStaticFilter_dist();
 
   oversamplingFilter.set_input_port(0, &inFilter, 0);
-  overdriveFilter.set_input_port(0, &oversamplingFilter, 0);
-  lowpassFilter.set_input_port(0, &overdriveFilter, 0);
+  driveFilter->set_input_port(0, &oversamplingFilter, 0);
+  lowpassFilter.set_input_port(0, driveFilter.get(), driveFilter->find_dynamic_pin("vout"));
   decimationFilter.set_input_port(0, &lowpassFilter, 0);
   toneFilter->set_input_port(0, &decimationFilter, 0);
   highpassFilter.set_input_port(0, toneFilter.get(), toneFilter->find_dynamic_pin("vout"));
@@ -125,8 +127,8 @@ void ATKTS9AudioProcessor::prepareToPlay(double sampleRate, int samplesPerBlock)
   oversamplingFilter.set_output_sampling_rate(intsamplerate * OVERSAMPLING);
   lowpassFilter.set_input_sampling_rate(intsamplerate * OVERSAMPLING);
   lowpassFilter.set_output_sampling_rate(intsamplerate * OVERSAMPLING);
-  overdriveFilter.set_input_sampling_rate(intsamplerate * OVERSAMPLING);
-  overdriveFilter.set_output_sampling_rate(intsamplerate * OVERSAMPLING);
+  driveFilter->set_input_sampling_rate(intsamplerate * OVERSAMPLING);
+  driveFilter->set_output_sampling_rate(intsamplerate * OVERSAMPLING);
   decimationFilter.set_input_sampling_rate(intsamplerate * OVERSAMPLING);
   decimationFilter.set_output_sampling_rate(intsamplerate);
   toneFilter->set_input_sampling_rate(intsamplerate);
@@ -172,7 +174,7 @@ void ATKTS9AudioProcessor::processBlock(AudioSampleBuffer& buffer, MidiBuffer& m
   if(*parameters.getRawParameterValue("drive") != old_drive)
   {
     old_drive = *parameters.getRawParameterValue("drive");
-    overdriveFilter.set_drive(old_drive / 100.);
+    driveFilter->set_parameter(0, old_drive / 100.);
   }
   if(*parameters.getRawParameterValue("tone") != old_tone)
   {

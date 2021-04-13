@@ -1,0 +1,17 @@
+*
+Vin	Vin	0	AC	1V
+*
+C2	Vin	1	0.18u
+R4	1	0	100k
+
+ZIC	2	1	vout
+R6	0	3	4.7k
+C3	2	3	0.047u
+D1	2	vout	ma150
+D2	vout	5	ma150
+D3	5	2	ma150
+R5	2	4	33k
+P1	4	vout	vout	1000k
+
+*
+.model ma150 d (is=1e-15A n=1)

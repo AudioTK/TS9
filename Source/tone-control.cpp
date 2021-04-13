@@ -322,7 +322,7 @@ bool iterate() const
 
 namespace TS9
 {
-std::unique_ptr<ATK::ModellerFilter<double>> createStaticFilter()
+std::unique_ptr<ATK::ModellerFilter<double>> createStaticFilter_tone()
 {
     return std::make_unique<StaticFilter>();
 }

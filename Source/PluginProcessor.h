@@ -71,7 +71,7 @@ public:
 private:
   ATK::InPointerFilter<float> inFilter;
   ATK::OversamplingFilter<double, ATK::Oversampling6points5order_8<double>> oversamplingFilter;
-  ATK::TS9OverdriveFilter<double> overdriveFilter;
+  std::unique_ptr<ATK::ModellerFilter<double>> driveFilter;
   ATK::IIRFilter<ATK::ButterworthLowPassCoefficients<double>> lowpassFilter;
   ATK::DecimationFilter<double> decimationFilter;
   std::unique_ptr<ATK::ModellerFilter<double>> toneFilter;

@@ -15,6 +15,7 @@
               useAppConfig="0" addUsingNamespaceToJuceHeader="0" pluginCode="aTS9">
   <MAINGROUP id="H9V4ut" name="TS9">
     <GROUP id="{65FEA80A-F647-1916-F1CE-08CA719AE1BE}" name="Source">
+      <FILE id="gME3wD" name="distortion.cpp" compile="1" resource="0" file="Source/distortion.cpp"/>
       <FILE id="mcm4Lq" name="tone-control.cpp" compile="1" resource="0"
             file="Source/tone-control.cpp"/>
       <FILE id="LX9XxX" name="PluginProcessor.cpp" compile="1" resource="0"
