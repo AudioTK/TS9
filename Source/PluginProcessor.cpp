@@ -174,7 +174,7 @@ void ATKTS9AudioProcessor::processBlock(AudioSampleBuffer& buffer, MidiBuffer& m
   if(*parameters.getRawParameterValue("drive") != old_drive)
   {
     old_drive = *parameters.getRawParameterValue("drive");
-    driveFilter->set_parameter(0, old_drive / 100.);
+    driveFilter->set_parameter(0, (old_drive * .98) / 100. + 0.01);
   }
   if(*parameters.getRawParameterValue("tone") != old_tone)
   {
