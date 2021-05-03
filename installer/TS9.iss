@@ -25,7 +25,7 @@ Name: "manual"; Description: "User guide"; Types: full custom; Flags: fixed
 [Files]
 Source: "..\Builds\VisualStudio2019_32\Win32\Release\VST3\TS9.vst3"; DestDir: "{cf}\VST3\"; Check: not Is64BitInstallMode; Components:vst3_32; Flags: ignoreversion;
 Source: "..\Builds\VisualStudio2019_32\Win32\Release\VST3\TS9.vst3"; DestDir: "{cf32}\VST3\"; Check: Is64BitInstallMode; Components:vst3_32; Flags: ignoreversion;
-Source: "..\Builds\VisualStudio2019\x64\Release\VST3\TS9 x64.vst3"; DestDir: "{cf64}\VST3\"; Check: Is64BitInstallMode; Components:vst3_64; Flags: ignoreversion;
+Source: "..\Builds\VisualStudio2019\x64\Release\VST3\TS9.vst3"; DestDir: "{cf64}\VST3\"; Check: Is64BitInstallMode; Components:vst3_64; Flags: ignoreversion;
 
 Source: "..\manual\TS9_manual.pdf"; DestDir: "{app}"
 Source: "changelog.txt"; DestDir: "{app}"
@@ -44,44 +44,6 @@ Name: "{group}\Uninstall TS9"; Filename: "{app}\unins000.exe"
 [Code]
 var
   OkToCopyLog : Boolean;
-  VST2DirPage_32: TInputDirWizardPage;
-  VST2DirPage_64: TInputDirWizardPage;
-
-procedure InitializeWizard;
-begin
-  if IsWin64 then begin
-    VST2DirPage_64 := CreateInputDirPage(wpSelectDir,
-    'Confirm 64-Bit VST2 Plugin Directory', '',
-    'Select the folder in which setup should install the 64-bit VST2 Plugin, then click Next.',
-    False, '');
-    VST2DirPage_64.Add('');
-    VST2DirPage_64.Values[0] := ExpandConstant('{reg:HKLM\SOFTWARE\VST,VSTPluginsPath|{pf}\Steinberg\VSTPlugins}\');
-
-    VST2DirPage_32 := CreateInputDirPage(wpSelectDir,
-      'Confirm 32-Bit VST2 Plugin Directory', '',
-      'Select the folder in which setup should install the 32-bit VST2 Plugin, then click Next.',
-      False, '');
-    VST2DirPage_32.Add('');
-    VST2DirPage_32.Values[0] := ExpandConstant('{reg:HKLM\SOFTWARE\WOW6432NODE\VST,VSTPluginsPath|{pf32}\Steinberg\VSTPlugins}\');
-  end else begin
-    VST2DirPage_32 := CreateInputDirPage(wpSelectDir,
-      'Confirm 32-Bit VST2 Plugin Directory', '',
-      'Select the folder in which setup should install the 32-bit VST2 Plugin, then click Next.',
-      False, '');
-    VST2DirPage_32.Add('');
-    VST2DirPage_32.Values[0] := ExpandConstant('{reg:HKLM\SOFTWARE\VST,VSTPluginsPath|{pf}\Steinberg\VSTPlugins}\');
-  end;
-end;
-
-function GetVST2Dir_32(Param: String): String;
-begin
-  Result := VST2DirPage_32.Values[0]
-end;
-
-function GetVST2Dir_64(Param: String): String;
-begin
-  Result := VST2DirPage_64.Values[0]
-end;
 
 procedure CurStepChanged(CurStep: TSetupStep);
 begin
